@@ -1,0 +1,109 @@
+body {
+    background-color: #f1f5f9;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background-color: #0f172a;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-heading {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    padding: 8px 12px 4px;
+}
+
+.sidebar-link {
+    color: #cbd5e1 !important;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.sidebar-link:hover {
+    background-color: #1e293b;
+    color: #fff !important;
+}
+
+.sidebar-link.active {
+    background-color: #2563eb;
+    color: #fff !important;
+}
+
+/* ── Main content ────────────────────────────────────────── */
+.main-content {
+    padding: 28px 32px;
+    min-height: 100vh;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.kpi-card {
+    border-radius: 10px;
+    border-left: 4px solid #2563eb;
+    background: #fff;
+    padding: 18px 20px;
+}
+
+.kpi-card .kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.kpi-card .kpi-label {
+    font-size: 12px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+/* ── Table ───────────────────────────────────────────────── */
+.table thead th {
+    background-color: #1e293b;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    white-space: nowrap;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* ── Page header ─────────────────────────────────────────── */
+.page-header {
+    margin-bottom: 24px;
+}
+
+.page-header h2 {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.page-header p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* ── Print (untuk laporan) ───────────────────────────────── */
+@media print {
+    .sidebar, .no-print { display: none !important; }
+    .main-content { padding: 0 !important; }
+    body { background: #fff !important; }
+}
