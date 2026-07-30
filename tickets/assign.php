@@ -117,9 +117,9 @@ require_once __DIR__ . '/../includes/header.php';
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label fw-semibold">Set Ulang Prioritas</label>
-                        <select name="priority_id" class="form-select">
-                            <option value="0">-- Biarkan sama --</option>
+                        <label class="form-label fw-semibold">Set Ulang Prioritas *</label>
+                        <select name="priority_id" class="form-select" required>
+                            <option value="">-- Pilih Prioritas --</option>
                             <?php while ($p = $priorities->fetch_assoc()): ?>
                                 <option value="<?= $p['id'] ?>"><?= h($p['name']) ?></option>
                             <?php endwhile; ?>

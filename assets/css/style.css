@@ -1,13 +1,13 @@
 body {
     background-color: #f1f5f9;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
 /* ── Sidebar ─────────────────────────────────────────────── */
 .sidebar {
-    width: 240px;
+    width: 300px;
     min-height: 100vh;
-    background-color: #0f172a;
+    background-color: #14171C;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -18,7 +18,7 @@ body {
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: #64748b;
+    color: #547792;
     padding: 8px 12px 4px;
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .sidebar-link.active {
-    background-color: #2563eb;
+    background-color: #1A3263;
     color: #fff !important;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .kpi-card {
     border-radius: 10px;
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid #1A3263;
     background: #fff;
     padding: 18px 20px;
 }

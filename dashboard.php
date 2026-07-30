@@ -43,7 +43,7 @@ $sql = "SELECT t.id, t.title, c.name AS kategori, p.name AS prioritas,
         JOIN statuses s ON t.status_id = s.id
         JOIN users cb ON t.created_by = cb.id ";
 if (!isAdmin()) {
-    $sql .= "WHERE t.created_by = " . intval($user['id']) . " ";
+    $sql .= "WHERE (t.created_by = " . intval($user['id']) . " OR t.assigned_to = " . intval($user['id']) . ") ";
 }
 $sql .= "ORDER BY t.id DESC LIMIT 15";
 $recentTickets = $conn->query($sql);

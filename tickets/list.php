@@ -20,7 +20,7 @@ $sql = "SELECT t.id, t.title, c.name AS kategori, p.name AS prioritas,
         WHERE 1=1 ";
 
 if (!isAdmin()) {
-    $sql .= "AND t.created_by = " . intval($user['id']) . " ";
+    $sql .= "AND (t.created_by = " . intval($user['id']) . " OR t.assigned_to = " . intval($user['id']) . ") ";
 }
 if ($search !== '') {
     $esc = $conn->real_escape_string($search);
@@ -44,7 +44,7 @@ require_once __DIR__ . '/../includes/header.php';
                    value="<?= h($search) ?>" style="width:200px">
             <button class="btn btn-sm btn-outline-secondary">Cari</button>
         </form>
-        <a href="create.php" class="btn btn-sm btn-success"><i class="bi bi-plus-circle me-1"></i> Buat Tiket</a>
+        <a href="create.php" class="btn btn-sm btn-success"> Buat Tiket</a>
     </div>
 </div>
 

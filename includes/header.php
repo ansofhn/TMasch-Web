@@ -11,6 +11,7 @@ $user = currentUser();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -85,7 +86,7 @@ $user = currentUser();
             <div class="fw-semibold"><?= h($user['full_name']) ?></div>
             <div class="small text-white-50 mb-2"><?= h($user['role_name']) ?></div>
             <a href="/logout.php" class="btn btn-sm btn-outline-danger w-100">
-                <i class="bi bi-box-arrow-right me-1"></i> Keluar
+                Keluar
             </a>
         </div>
     </nav>
