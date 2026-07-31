@@ -26,10 +26,10 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="page-header d-flex justify-content-between align-items-start no-print">
     <div>
-        <h2>Laporan Tren Tiket</h2>
+        <h2 style="color:#1A3263">Laporan Tren Tiket</h2>
         <p>Jumlah tiket per bulan berdasarkan status.</p>
     </div>
-    <button onclick="window.print()" class="btn btn-sm btn-outline-primary">
+    <button onclick="window.print()" class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;">
         <i class="bi bi-printer me-1"></i> Cetak / PDF
     </button>
 </div>
@@ -58,8 +58,8 @@ require_once __DIR__ . '/../includes/header.php';
                 <tr>
                     <td class="fw-semibold"><?= h($r['bulan']) ?></td>
                     <td><?= $r['total'] ?></td>
-                    <td><span class="text-primary"><?= $r['jml_open'] ?></span></td>
-                    <td><span style="color:#f59e0b"><?= $r['jml_progress'] ?></span></td>
+                    <td><span style="color:#1A3263"><?= $r['jml_open'] ?></span></td>
+                    <td><span style="color:#FAB95B"><?= $r['jml_progress'] ?></span></td>
                     <td><span class="text-secondary"><?= $r['jml_closed'] ?></span></td>
                 </tr>
                 <?php endforeach; ?>
@@ -80,8 +80,8 @@ new Chart(document.getElementById('trendChart'), {
     data: {
         labels: labels,
         datasets: [
-            { label: 'Open', data: openData, backgroundColor: '#3b82f6' },
-            { label: 'In Progress', data: progressData, backgroundColor: '#f59e0b' },
+            { label: 'Open', data: openData, backgroundColor: '#1A3263' },
+            { label: 'In Progress', data: progressData, backgroundColor: '#FAB95B' },
             { label: 'Closed', data: closedData, backgroundColor: '#94a3b8' }
         ]
     },

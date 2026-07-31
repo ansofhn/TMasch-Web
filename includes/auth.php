@@ -59,26 +59,23 @@ function h($str)
 function statusBadge($statusName)
 {
     $map = [
-        'Open'        => 'primary',
-        'In Progress' => 'warning',
-        'Closed'      => 'secondary',
+        'Open'        => '#1A3263',
+        'In Progress' => '#FAB95B',
+        'Closed'      => '#64748b',
     ];
-    $color = $map[$statusName] ?? 'secondary';
-    return '<span class="badge bg-' . $color . '">' . h($statusName) . '</span>';
+    $color = $map[$statusName] ?? '#64748b';
+    return '<span class="badge" style="background-color:' . $color . ';">' . h($statusName) . '</span>';
 }
 
 /** Badge warna untuk prioritas */
 function priorityBadge($priorityName)
 {
     $map = [
-        'LOW'      => 'success',
-        'MEDIUM'   => 'warning',
-        'HIGH'     => 'orange',
-        'CRITICAL' => 'danger',
+        'LOW'      => '#D5E7B5',
+        'MEDIUM'   => '#72BAA9',
+        'HIGH'     => '#AE2448',
+        'CRITICAL' => '#6E1A37',
     ];
-    $color = $map[$priorityName] ?? 'secondary';
-    if ($color === 'orange') {
-        return '<span class="badge" style="background:#ea580c">' . h($priorityName) . '</span>';
-    }
-    return '<span class="badge bg-' . $color . '">' . h($priorityName) . '</span>';
+    $color = $map[$priorityName] ?? '#64748b';
+    return '<span class="badge" style="background-color:' . $color . ';">' . h($priorityName) . '</span>';
 }

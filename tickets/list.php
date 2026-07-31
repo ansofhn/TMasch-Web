@@ -35,16 +35,16 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="page-header d-flex justify-content-between align-items-start flex-wrap gap-2">
     <div>
-        <h2><?= isAdmin() ? 'Semua Tiket' : 'Tiket Saya' ?></h2>
+        <h2 style="color:#1A3263"><?= isAdmin() ? 'Semua Tiket' : 'Tiket Saya' ?></h2>
         <p>Kelola dan pantau seluruh tiket yang diajukan.</p>
     </div>
     <div class="d-flex gap-2">
         <form method="GET" class="d-flex gap-2">
             <input type="text" name="q" class="form-control form-control-sm" placeholder="Cari tiket..."
-                   value="<?= h($search) ?>" style="width:200px">
+                value="<?= h($search) ?>" style="width:200px">
             <button class="btn btn-sm btn-outline-secondary">Cari</button>
         </form>
-        <a href="create.php" class="btn btn-sm btn-success"> Buat Tiket</a>
+        <a href="create.php" class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;">Buat Tiket</a>
     </div>
 </div>
 
@@ -66,24 +66,26 @@ require_once __DIR__ . '/../includes/header.php';
             </thead>
             <tbody>
                 <?php if ($tickets->num_rows === 0): ?>
-                    <tr><td colspan="9" class="text-center text-muted py-4">Tidak ada tiket ditemukan.</td></tr>
+                    <tr>
+                        <td colspan="9" class="text-center text-muted py-4">Tidak ada tiket ditemukan.</td>
+                    </tr>
                 <?php endif; ?>
                 <?php while ($row = $tickets->fetch_assoc()): ?>
-                <tr>
-                    <td>#<?= $row['id'] ?></td>
-                    <td><?= h($row['title']) ?></td>
-                    <td><?= h($row['kategori']) ?></td>
-                    <td><?= $row['prioritas'] ? priorityBadge($row['prioritas']) : '-' ?></td>
-                    <td><?= statusBadge($row['status']) ?></td>
-                    <td><?= h($row['dibuat_oleh']) ?></td>
-                    <td><?= h($row['ditugaskan']) ?></td>
-                    <td><?= date('d/m/y H:i', strtotime($row['created_at'])) ?></td>
-                    <td>
-                        <a href="detail.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-primary">
-                            <i class="bi bi-eye"></i>
-                        </a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>#<?= $row['id'] ?></td>
+                        <td><?= h($row['title']) ?></td>
+                        <td><?= h($row['kategori']) ?></td>
+                        <td><?= $row['prioritas'] ? priorityBadge($row['prioritas']) : '-' ?></td>
+                        <td><?= statusBadge($row['status']) ?></td>
+                        <td><?= h($row['dibuat_oleh']) ?></td>
+                        <td><?= h($row['ditugaskan']) ?></td>
+                        <td><?= date('d/m/y H:i', strtotime($row['created_at'])) ?></td>
+                        <td>
+                            <a href="detail.php?id=<?= $row['id'] ?>" class="btn btn-sm" style="background-color:#FAB95B; color:#fff; font-weight:bold; border:2px solid #FAB95B;">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>

@@ -43,11 +43,11 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="page-header d-flex justify-content-between align-items-center">
     <div>
-        <h2>Master Prioritas</h2>
+        <h2 style="color:#1A3263">Master Prioritas</h2>
         <p>Kelola tingkat prioritas tiket.</p>
     </div>
-    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#priModal" onclick="resetForm()">
-        <i class="bi bi-plus-circle me-1"></i> Tambah Prioritas
+    <button class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;" data-bs-toggle="modal" data-bs-target="#priModal" onclick="resetForm()">
+        Tambah Prioritas
     </button>
 </div>
 
@@ -58,22 +58,28 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="card">
     <div class="table-responsive">
         <table class="table table-hover mb-0 align-middle">
-            <thead><tr><th style="width:80px">ID</th><th>Nama Prioritas</th><th style="width:120px"></th></tr></thead>
+            <thead>
+                <tr>
+                    <th style="width:80px">ID</th>
+                    <th>Nama Prioritas</th>
+                    <th style="width:120px"></th>
+                </tr>
+            </thead>
             <tbody>
                 <?php while ($p = $priorities->fetch_assoc()): ?>
-                <tr>
-                    <td>#<?= $p['id'] ?></td>
-                    <td><?= priorityBadge($p['name']) ?></td>
-                    <td>
-                        <button class="btn btn-sm btn-outline-primary"
-                            onclick='editRow(<?= json_encode($p) ?>)'
-                            data-bs-toggle="modal" data-bs-target="#priModal">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <a href="?delete=<?= $p['id'] ?>" class="btn btn-sm btn-outline-danger"
-                           onclick="return confirm('Yakin hapus prioritas ini?')"><i class="bi bi-trash"></i></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>#<?= $p['id'] ?></td>
+                        <td><?= priorityBadge($p['name']) ?></td>
+                        <td>
+                            <button class="btn btn-sm" style="background-color:#1A3263; color:#fff; font-weight:bold;"
+                                onclick='editRow(<?= json_encode($p) ?>)'
+                                data-bs-toggle="modal" data-bs-target="#priModal">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <a href="?delete=<?= $p['id'] ?>" class="btn btn-sm" style="background-color:#D9534F; color:#fff; font-weight:bold;"
+                                onclick="return confirm('Yakin hapus prioritas ini?')"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
@@ -95,7 +101,7 @@ require_once __DIR__ . '/../includes/header.php';
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn" style="background-color:#1A3263; color:#fff; font-weight:bold;">Simpan</button>
                 </div>
             </form>
         </div>
@@ -103,16 +109,17 @@ require_once __DIR__ . '/../includes/header.php';
 </div>
 
 <script>
-function resetForm() {
-    document.getElementById('modalTitle').innerText = 'Tambah Prioritas';
-    document.getElementById('f_id').value = '';
-    document.getElementById('f_name').value = '';
-}
-function editRow(row) {
-    document.getElementById('modalTitle').innerText = 'Edit Prioritas';
-    document.getElementById('f_id').value = row.id;
-    document.getElementById('f_name').value = row.name;
-}
+    function resetForm() {
+        document.getElementById('modalTitle').innerText = 'Tambah Prioritas';
+        document.getElementById('f_id').value = '';
+        document.getElementById('f_name').value = '';
+    }
+
+    function editRow(row) {
+        document.getElementById('modalTitle').innerText = 'Edit Prioritas';
+        document.getElementById('f_id').value = row.id;
+        document.getElementById('f_name').value = row.name;
+    }
 </script>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

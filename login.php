@@ -196,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="login-content">
-                <div class="eyebrow">WELCOME BACK</div>
+                <div class="eyebrow">SELAMAT DATANG</div>
                 <h2>Login to your account.</h2>
 
                 <?php if ($error): ?>

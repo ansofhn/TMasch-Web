@@ -21,10 +21,10 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="page-header d-flex justify-content-between align-items-start no-print">
     <div>
-        <h2>Laporan Aktivitas User</h2>
+        <h2 style="color:#1A3263">Laporan Aktivitas User</h2>
         <p>Ringkasan tiket yang dibuat dan diselesaikan per user.</p>
     </div>
-    <button onclick="window.print()" class="btn btn-sm btn-outline-primary">
+    <button onclick="window.print()" class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;">
         <i class="bi bi-printer me-1"></i> Cetak / PDF
     </button>
 </div>
@@ -49,8 +49,8 @@ require_once __DIR__ . '/../includes/header.php';
                     <td><span class="badge bg-secondary"><?= h($u['role_name']) ?></span></td>
                     <td><?= h($u['department']) ?></td>
                     <td><?= $u['tiket_dibuat'] ?></td>
-                    <td><span class="text-success"><?= $u['tiket_selesai'] ?></span></td>
-                    <td><span class="text-primary"><?= $u['tiket_aktif'] ?></span></td>
+                    <td><span style="color:#249D8F"><?= $u['tiket_selesai'] ?></span></td>
+                    <td><span style="color:#1A3263"><?= $u['tiket_aktif'] ?></span></td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>

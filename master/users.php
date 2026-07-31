@@ -66,12 +66,12 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="page-header d-flex justify-content-between align-items-center">
     <div>
-        <h2>Master User</h2>
+        <h2 style="color:#1A3263">Master User</h2>
         <p>Kelola akun Admin, Guru, dan Siswa.</p>
     </div>
-    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#userModal"
+    <button class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;" data-bs-toggle="modal" data-bs-target="#userModal"
             onclick="resetForm()">
-        <i class="bi bi-plus-circle me-1"></i> Tambah User
+        Tambah User
     </button>
 </div>
 
@@ -94,12 +94,12 @@ require_once __DIR__ . '/../includes/header.php';
                     <td><span class="badge bg-secondary"><?= h($u['role_name']) ?></span></td>
                     <td><?= h($u['department']) ?></td>
                     <td>
-                        <button class="btn btn-sm btn-outline-primary"
+                        <button class="btn btn-sm" style="background-color:#1A3263; color:#fff; font-weight:bold;"
                             onclick='editUser(<?= json_encode($u) ?>)'
                             data-bs-toggle="modal" data-bs-target="#userModal">
                             <i class="bi bi-pencil"></i>
                         </button>
-                        <a href="?delete=<?= $u['id'] ?>" class="btn btn-sm btn-outline-danger"
+                        <a href="?delete=<?= $u['id'] ?>" class="btn btn-sm" style="background-color:#D9534F; color:#fff; font-weight:bold;"
                            onclick="return confirm('Yakin ingin menghapus user ini?')">
                             <i class="bi bi-trash"></i>
                         </a>
@@ -154,7 +154,7 @@ require_once __DIR__ . '/../includes/header.php';
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn" style="background-color:#1A3263; color:#fff; font-weight:bold;">Simpan</button>
                 </div>
             </form>
         </div>

@@ -51,7 +51,7 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="page-header">
-    <h2>Assign Tiket</h2>
+    <h2 style="color:#1A3263">Assign Tiket</h2>
     <p>Tugaskan tiket yang berstatus Open ke Guru / Staff.</p>
 </div>
 
@@ -82,7 +82,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <td><?= $t['prioritas'] ? priorityBadge($t['prioritas']) : '-' ?></td>
                             <td><?= h($t['dibuat_oleh']) ?></td>
                             <td>
-                                <button class="btn btn-sm btn-primary"
+                                <button class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;"
                                     onclick="pilihTiket(<?= $t['id'] ?>, '<?= h(addslashes($t['title'])) ?>')">
                                     Pilih
                                 </button>
@@ -126,7 +126,7 @@ require_once __DIR__ . '/../includes/header.php';
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100">Tugaskan Sekarang</button>
+                    <button type="submit" class="btn w-100" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;">Tugaskan Sekarang</button>
                 </form>
             </div>
         </div>

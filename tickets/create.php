@@ -44,7 +44,7 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="page-header">
-    <h2>Buat Tiket Baru</h2>
+    <h2 style="color:#1A3263">Buat Tiket Baru</h2>
     <p>Isi formulir di bawah untuk mengajukan tiket administrasi sekolah.</p>
 </div>
 
@@ -95,7 +95,7 @@ require_once __DIR__ . '/../includes/header.php';
 
             <div class="d-flex justify-content-end gap-2">
                 <a href="list.php" class="btn btn-outline-secondary">Batal</a>
-                <button type="submit" class="btn btn-primary">Ajukan Tiket</button>
+                <button type="submit" class="btn" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;">Ajukan Tiket</button>
             </div>
         </form>
     </div>

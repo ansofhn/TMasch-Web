@@ -42,7 +42,7 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="page-header">
-    <h2>Update Status Tiket</h2>
+    <h2 style="color:#1A3263">Update Status Tiket</h2>
     <p>Selesaikan tiket yang sedang diproses (In Progress → Closed).</p>
 </div>
 
@@ -73,7 +73,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <td><?= $t['prioritas'] ? priorityBadge($t['prioritas']) : '-' ?></td>
                             <td><?= h($t['ditugaskan']) ?></td>
                             <td>
-                                <button class="btn btn-sm btn-success"
+                                <button class="btn btn-sm" style="background-color:#249D8F; color:#fff; font-weight:bold;"
                                     onclick="pilihTiket(<?= $t['id'] ?>, '<?= h(addslashes($t['title'])) ?>')">
                                     Selesaikan
                                 </button>
@@ -103,8 +103,8 @@ require_once __DIR__ . '/../includes/header.php';
                                   placeholder="Jelaskan bagaimana tiket ini diselesaikan..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-success w-100">
-                        <i class="bi bi-check-circle me-1"></i> Tutup Tiket (Closed)
+                    <button type="submit" class="btn w-100" style="background-color:#249D8F; color:#fff; font-weight:bold;">
+                        Tutup Tiket (Closed)
                     </button>
                 </form>
             </div>

@@ -52,27 +52,27 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="page-header">
-    <h2>Dashboard</h2>
+    <h2 style="color:#1A3263">Dashboard</h2>
     <p>Selamat datang, <strong><?= h($user['full_name']) ?></strong> — <?= h($user['role_name']) ?></p>
 </div>
 
 <!-- ── KPI Cards ── -->
 <div class="row g-3 mb-4">
     <div class="col-md-4">
-        <div class="kpi-card" style="border-left-color:#3b82f6">
-            <div class="kpi-value text-primary"><?= $openCount ?></div>
+        <div class="kpi-card" style="border-left-color:#1A3263">
+            <div class="kpi-value" style="color:#1A3263"><?= $openCount ?></div>
             <div class="kpi-label">Tiket Open</div>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="kpi-card" style="border-left-color:#f59e0b">
-            <div class="kpi-value" style="color:#f59e0b"><?= $progressCount ?></div>
+        <div class="kpi-card" style="border-left-color:#FAB95B">
+            <div class="kpi-value" style="color:#FAB95B"><?= $progressCount ?></div>
             <div class="kpi-label">Sedang Diproses</div>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="kpi-card" style="border-left-color:#10b981">
-            <div class="kpi-value text-success"><?= $closedCount ?></div>
+        <div class="kpi-card" style="border-left-color:#64748b">
+            <div class="kpi-value" style="color:#64748b"><?= $closedCount ?></div>
             <div class="kpi-label">Closed</div>
         </div>
     </div>

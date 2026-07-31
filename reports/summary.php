@@ -33,7 +33,7 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="page-header d-flex justify-content-between align-items-start flex-wrap gap-2 no-print">
     <div>
-        <h2>Laporan Rangkuman Tiket</h2>
+        <h2 style="color:#1A3263">Laporan Rangkuman Tiket</h2>
         <p>Daftar semua tiket beserta status, kategori, dan prioritas.</p>
     </div>
     <div class="d-flex gap-2 align-items-start">
@@ -43,7 +43,7 @@ require_once __DIR__ . '/../includes/header.php';
             <option value="In Progress" <?= $statusFilter == 'In Progress' ? 'selected' : '' ?>>In Progress</option>
             <option value="Closed" <?= $statusFilter == 'Closed' ? 'selected' : '' ?>>Closed</option>
         </select>
-        <button onclick="window.print()" class="btn btn-sm btn-outline-primary">
+        <button onclick="window.print()" class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;">
             <i class="bi bi-printer me-1"></i> Cetak / PDF
         </button>
     </div>
@@ -51,20 +51,20 @@ require_once __DIR__ . '/../includes/header.php';
 
 <div class="row g-3 mb-4 no-print">
     <div class="col-md-3">
-        <div class="kpi-card" style="border-left-color:#2563eb">
-            <div class="kpi-value text-primary"><?= $totalAll ?></div>
+        <div class="kpi-card" style="border-left-color:#1A3263">
+            <div class="kpi-value" style="color:#1A3263"><?= $totalAll ?></div>
             <div class="kpi-label">Total Tiket</div>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="kpi-card" style="border-left-color:#3b82f6">
-            <div class="kpi-value text-primary"><?= $totalOpen ?></div>
+        <div class="kpi-card" style="border-left-color:#1A3263">
+            <div class="kpi-value" style="color:#1A3263"><?= $totalOpen ?></div>
             <div class="kpi-label">Open</div>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="kpi-card" style="border-left-color:#f59e0b">
-            <div class="kpi-value" style="color:#f59e0b"><?= $totalProgress ?></div>
+        <div class="kpi-card" style="border-left-color:#FAB95B">
+            <div class="kpi-value" style="color:#FAB95B"><?= $totalProgress ?></div>
             <div class="kpi-label">In Progress</div>
         </div>
     </div>
