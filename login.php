@@ -149,6 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-side {
             flex: 1;
             padding: 16px 16px 16px 0;
+            cursor: default;
         }
         .placeholder {
             background: #FAB95B;
@@ -165,6 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 2rem;
             color: #1A3263;
             padding: 40px 40px 40px 40px;
+            cursor: default;
         }
         .child {
             width: 100%;
@@ -174,9 +176,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             align-items: center;
             justify-content: center;
             border-radius: 24px;
+            cursor: default;
         }
         @media (max-width: 900px) {
             .form-side { padding: 40px; }
+            .login-side { display: none; }
         }
     </style>
 </head>
