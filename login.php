@@ -89,25 +89,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 48px 64px;
         }
 
-        .topnav {
+        .brand {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
+            font-family: 'Space Grotesk';
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #1A3263 !important;
         }
 
-        .topnav .brand {
-            font-weight: 800;
-            letter-spacing: .02em;
-            color: #1e293b;
-            font-size: 1.1rem;
+        .brand .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background: #FAB95B;
         }
 
-        .topnav .links a {
+        /* .topnav .links a {
             color: #94a3b8;
             text-decoration: none;
             margin-left: 32px;
             font-weight: 500;
-        }
+        } */
 
         .login-content {
             flex: 1;
@@ -140,6 +144,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-content .sub a {
             color: #1e293b;
             font-weight: 700;
+            text-decoration: none;
+        }
+
+        a {
             text-decoration: none;
         }
 
@@ -279,12 +287,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="login-shell">
         <div class="form-side">
-            <div class="topnav">
-                <span class="brand">T-Masch</span>
-                <nav class="links d-none d-md-block">
-                    <a href="/landing.php">Halaman Utama</a>
-                </nav>
-            </div>
+            <a href="/landing.php" class="brand"><span class="dot"></span>T-Masch</a>
 
             <div class="login-content">
                 <div class="eyebrow">SELAMAT DATANG</div>
