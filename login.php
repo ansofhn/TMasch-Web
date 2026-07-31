@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         h1,
         h2,
@@ -149,6 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 14px 18px;
             border-radius: 10px;
             font-size: .95rem;
+            transition: box-shadow .2s ease, background .2s ease;
         }
 
         .form-control::placeholder {
@@ -168,17 +170,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-weight: 700;
             padding: 14px;
             border-radius: 10px;
+            letter-spacing: .02em;
+            transition: transform .15s ease, box-shadow .15s ease;
+            box-shadow: 0 8px 20px rgba(26, 50, 99, .25);
         }
 
         .btn-signin:hover {
             background: #1A3263;
             color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(26, 50, 99, .32);
         }
 
         .login-side {
             flex: 1;
             padding: 16px 16px 16px 0;
             cursor: default;
+        }
+
+        .login-content .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .login-content .eyebrow::before {
+            content: "";
+            width: 18px;
+            height: 2px;
+            background: #FAB95B;
+            display: inline-block;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: .95rem;
+        }
+
+        .input-icon .form-control {
+            padding-left: 20px;
         }
 
         .placeholder {
@@ -197,17 +235,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #1A3263;
             padding: 40px 40px 40px 40px;
             cursor: default;
+            box-shadow: inset 0 0 0 1px rgba(26, 50, 99, .08);
         }
 
         .child {
             width: 100%;
             height: 100%;
-            background: #1A3263;
+            background:
+                radial-gradient(circle at 30% 25%, rgba(250, 185, 91, .18), transparent 55%),
+                radial-gradient(circle at 80% 80%, rgba(232, 226, 219, .12), transparent 50%),
+                #1A3263;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 24px;
             cursor: default;
+            position: relative;
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, .25);
+        }
+
+        .child::before {
+            content: "";
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: #FAB95B;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
         }
 
         @media (max-width: 900px) {
@@ -243,10 +296,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <form method="POST" action="login.php">
                     <div class="mb-3">
-                        <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
+                        <div class="input-icon">
+                            <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <div class="input-icon">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-signin w-100">Sign In</button>
                 </form>

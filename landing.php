@@ -159,6 +159,7 @@ $anggotaKelompok = [
       font-size: .72rem;
       letter-spacing: .06em;
       color: #14171C;
+      font-weight:600;
       background: var(--accent);
       padding: 5px 10px;
       border-radius: 20px;
