@@ -159,7 +159,7 @@ $anggotaKelompok = [
       font-size: .72rem;
       letter-spacing: .06em;
       color: #14171C;
-      font-weight:600;
+      font-weight: 600;
       background: var(--accent);
       padding: 5px 10px;
       border-radius: 20px;
@@ -538,7 +538,6 @@ $anggotaKelompok = [
 
       .flow-step {
         border-right: none;
-        border-bottom: 1px solid var(--line);
       }
 
       .roles {
@@ -550,7 +549,30 @@ $anggotaKelompok = [
       }
 
       .stat {
+        padding: 20px 16px;
+        border-right: 1px solid var(--line);
+      }
+
+      .stat:nth-child(2n) {
+        border-right: none;
+      }
+
+      .stat:nth-child(1),
+      .stat:nth-child(2) {
         border-bottom: 1px solid var(--line);
+      }
+
+      .stat:nth-child(3),
+      .stat:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .stat .num {
+        font-size: 1.5rem;
+      }
+
+      .stat .lbl {
+        font-size: .74rem;
       }
 
       .cta-band {
@@ -738,7 +760,7 @@ $anggotaKelompok = [
     </section>
 
     <footer class="footer">
-      <span>© <?= date('Y') ?> T-Masch — Universitas Indraprasta PGRI</span>
+      <span>© <?= date('Y') ?> T-Masch</span>
       <span>made with spell and potions</span>
     </footer>
 
