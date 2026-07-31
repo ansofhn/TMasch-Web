@@ -38,20 +38,24 @@ require_once __DIR__ . '/../includes/header.php';
         <table class="table table-sm table-hover mb-0 align-middle">
             <thead>
                 <tr>
-                    <th>Nama User</th><th>Role</th><th>Dept/Kelas</th>
-                    <th>Tiket Dibuat</th><th>Tiket Selesai</th><th>Tiket Aktif</th>
+                    <th>Nama User</th>
+                    <th>Role</th>
+                    <th>Dept/Kelas</th>
+                    <th>Tiket Dibuat</th>
+                    <th>Tiket Selesai</th>
+                    <th>Tiket Aktif</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($u = $users->fetch_assoc()): ?>
-                <tr>
-                    <td class="fw-semibold"><?= h($u['full_name']) ?></td>
-                    <td><span class="badge bg-secondary"><?= h($u['role_name']) ?></span></td>
-                    <td><?= h($u['department']) ?></td>
-                    <td><?= $u['tiket_dibuat'] ?></td>
-                    <td><span style="color:#249D8F"><?= $u['tiket_selesai'] ?></span></td>
-                    <td><span style="color:#1A3263"><?= $u['tiket_aktif'] ?></span></td>
-                </tr>
+                    <tr>
+                        <td class="fw-semibold"><?= h($u['full_name']) ?></td>
+                        <td><span class="badge bg-secondary"><?= h($u['role_name']) ?></span></td>
+                        <td><?= h($u['department']) ?></td>
+                        <td><?= $u['tiket_dibuat'] ?></td>
+                        <td><span style="color:#249D8F"><?= $u['tiket_selesai'] ?></span></td>
+                        <td><span style="color:#1A3263"><?= $u['tiket_aktif'] ?></span></td>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>

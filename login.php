@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
         body {
             min-height: 100vh;
             margin: 0;
@@ -59,8 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             align-items: center;
             justify-content: center;
             background: #1A3263;
-            font-family: 'Space Grotesk',sans-serif;;
+            font-family: 'Space Grotesk', sans-serif;
+            ;
         }
+
         .login-shell {
             width: 94%;
             max-width: 1300px;
@@ -69,31 +78,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 24px;
             display: flex;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,.06);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .06);
         }
+
         .form-side {
             flex: 1;
             display: flex;
             flex-direction: column;
             padding: 48px 64px;
         }
+
         .topnav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .topnav .brand {
             font-weight: 800;
             letter-spacing: .02em;
             color: #1e293b;
             font-size: 1.1rem;
         }
+
         .topnav .links a {
             color: #94a3b8;
             text-decoration: none;
             margin-left: 32px;
             font-weight: 500;
         }
+
         .login-content {
             flex: 1;
             display: flex;
@@ -101,6 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             justify-content: center;
             max-width: 420px;
         }
+
         .eyebrow {
             color: #94a3b8;
             font-weight: 700;
@@ -108,21 +123,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             letter-spacing: .12em;
             margin-bottom: 6px;
         }
+
         .login-content h2 {
             color: #1e293b;
             font-weight: 800;
             font-size: 2.2rem;
             margin-bottom: 14px;
         }
+
         .login-content .sub {
             color: #94a3b8;
             margin-bottom: 32px;
         }
+
         .login-content .sub a {
             color: #1e293b;
             font-weight: 700;
             text-decoration: none;
         }
+
         .form-control {
             background: #eef0f1;
             border: none;
@@ -131,12 +150,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 10px;
             font-size: .95rem;
         }
-        .form-control::placeholder { color: #94a3b8; }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
         .form-control:focus {
             background: #e7e9eb;
             color: #1e293b;
-            box-shadow: 0 0 0 3px rgba(30,41,59,.1);
+            box-shadow: 0 0 0 3px rgba(30, 41, 59, .1);
         }
+
         .btn-signin {
             background: #1A3263;
             border: none;
@@ -145,12 +169,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 14px;
             border-radius: 10px;
         }
-        .btn-signin:hover { background: #1A3263; color: #fff; }
+
+        .btn-signin:hover {
+            background: #1A3263;
+            color: #fff;
+        }
+
         .login-side {
             flex: 1;
             padding: 16px 16px 16px 0;
             cursor: default;
         }
+
         .placeholder {
             background: #FAB95B;
             width: 100%;
@@ -168,6 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 40px 40px 40px 40px;
             cursor: default;
         }
+
         .child {
             width: 100%;
             height: 100%;
@@ -178,12 +209,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 24px;
             cursor: default;
         }
+
         @media (max-width: 900px) {
-            .form-side { padding: 40px; }
-            .login-side { display: none; }
+            .form-side {
+                padding: 40px;
+            }
+
+            .login-side {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="login-shell">
@@ -216,11 +254,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="login-side">
-             <div class="placeholder">
+            <div class="placeholder">
                 <div class="child"></div>
-             </div>
+            </div>
         </div>
     </div>
 
 </body>
+
 </html>

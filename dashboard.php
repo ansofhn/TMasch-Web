@@ -7,7 +7,8 @@ $user = currentUser();
 $pageTitle = 'Dashboard';
 
 // ── KPI counts ─────────────────────────────────────────────
-function countByStatus($conn, $statusName, $userId = null) {
+function countByStatus($conn, $statusName, $userId = null)
+{
     if ($userId) {
         $stmt = $conn->prepare(
             "SELECT COUNT(*) c FROM tickets t JOIN statuses s ON t.status_id=s.id
@@ -98,18 +99,20 @@ require_once __DIR__ . '/includes/header.php';
             </thead>
             <tbody>
                 <?php if ($recentTickets->num_rows === 0): ?>
-                    <tr><td colspan="7" class="text-center text-muted py-4">Belum ada tiket.</td></tr>
+                    <tr>
+                        <td colspan="7" class="text-center text-muted py-4">Belum ada tiket.</td>
+                    </tr>
                 <?php endif; ?>
                 <?php while ($row = $recentTickets->fetch_assoc()): ?>
-                <tr>
-                    <td>#<?= $row['id'] ?></td>
-                    <td><?= h($row['title']) ?></td>
-                    <td><?= h($row['kategori']) ?></td>
-                    <td><?= $row['prioritas'] ? priorityBadge($row['prioritas']) : '-' ?></td>
-                    <td><?= statusBadge($row['status']) ?></td>
-                    <td><?= h($row['dibuat_oleh']) ?></td>
-                    <td><?= date('d/m/Y H:i', strtotime($row['created_at'])) ?></td>
-                </tr>
+                    <tr>
+                        <td>#<?= $row['id'] ?></td>
+                        <td><?= h($row['title']) ?></td>
+                        <td><?= h($row['kategori']) ?></td>
+                        <td><?= $row['prioritas'] ? priorityBadge($row['prioritas']) : '-' ?></td>
+                        <td><?= statusBadge($row['status']) ?></td>
+                        <td><?= h($row['dibuat_oleh']) ?></td>
+                        <td><?= date('d/m/Y H:i', strtotime($row['created_at'])) ?></td>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>

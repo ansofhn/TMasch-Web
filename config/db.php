@@ -1,8 +1,8 @@
 <?php
 $DB_HOST = "localhost";
-$DB_PORT = "3306";      
+$DB_PORT = "3306";
 $DB_USER = "root";
-$DB_PASS = "";           
+$DB_PASS = "";
 $DB_NAME = "tmasch_db";
 
 $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);

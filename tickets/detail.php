@@ -61,9 +61,9 @@ require_once __DIR__ . '/../includes/header.php';
                 <p class="text-muted"><?= nl2br(h($ticket['description'] ?: '-')) ?></p>
 
                 <?php if ($ticket['resolution_note']): ?>
-                <hr>
-                <h5 class="fw-semibold">Catatan Resolusi</h5>
-                <p class="text-muted"><?= nl2br(h($ticket['resolution_note'])) ?></p>
+                    <hr>
+                    <h5 class="fw-semibold">Catatan Resolusi</h5>
+                    <p class="text-muted"><?= nl2br(h($ticket['resolution_note'])) ?></p>
                 <?php endif; ?>
             </div>
         </div>
@@ -74,11 +74,22 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="card-body p-4">
                 <h6 class="fw-semibold mb-3">Informasi Tiket</h6>
                 <table class="table table-sm table-borderless mb-0">
-                    <tr><td class="text-muted">Dibuat oleh</td><td class="fw-semibold"><?= h($ticket['dibuat_oleh']) ?></td></tr>
-                    <tr><td class="text-muted">Ditugaskan ke</td><td class="fw-semibold"><?= h($ticket['ditugaskan']) ?></td></tr>
-                    <tr><td class="text-muted">Tgl dibuat</td><td><?= date('d/m/Y H:i', strtotime($ticket['created_at'])) ?></td></tr>
-                    <tr><td class="text-muted">Tgl selesai</td>
-                        <td><?= $ticket['resolved_at'] ? date('d/m/Y H:i', strtotime($ticket['resolved_at'])) : '-' ?></td></tr>
+                    <tr>
+                        <td class="text-muted">Dibuat oleh</td>
+                        <td class="fw-semibold"><?= h($ticket['dibuat_oleh']) ?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Ditugaskan ke</td>
+                        <td class="fw-semibold"><?= h($ticket['ditugaskan']) ?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Tgl dibuat</td>
+                        <td><?= date('d/m/Y H:i', strtotime($ticket['created_at'])) ?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">Tgl selesai</td>
+                        <td><?= $ticket['resolved_at'] ? date('d/m/Y H:i', strtotime($ticket['resolved_at'])) : '-' ?></td>
+                    </tr>
                 </table>
             </div>
         </div>

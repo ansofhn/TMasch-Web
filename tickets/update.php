@@ -60,25 +60,33 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="table-responsive">
                 <table class="table table-hover mb-0 align-middle">
                     <thead>
-                        <tr><th>ID</th><th>Judul</th><th>Prioritas</th><th>Ditugaskan</th><th></th></tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Judul</th>
+                            <th>Prioritas</th>
+                            <th>Ditugaskan</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
                         <?php if ($activeTickets->num_rows === 0): ?>
-                            <tr><td colspan="5" class="text-center text-muted py-4">Tidak ada tiket yang sedang diproses.</td></tr>
+                            <tr>
+                                <td colspan="5" class="text-center text-muted py-4">Tidak ada tiket yang sedang diproses.</td>
+                            </tr>
                         <?php endif; ?>
                         <?php while ($t = $activeTickets->fetch_assoc()): ?>
-                        <tr>
-                            <td>#<?= $t['id'] ?></td>
-                            <td><?= h($t['title']) ?></td>
-                            <td><?= $t['prioritas'] ? priorityBadge($t['prioritas']) : '-' ?></td>
-                            <td><?= h($t['ditugaskan']) ?></td>
-                            <td>
-                                <button class="btn btn-sm" style="background-color:#249D8F; color:#fff; font-weight:bold;"
-                                    onclick="pilihTiket(<?= $t['id'] ?>, '<?= h(addslashes($t['title'])) ?>')">
-                                    Selesaikan
-                                </button>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>#<?= $t['id'] ?></td>
+                                <td><?= h($t['title']) ?></td>
+                                <td><?= $t['prioritas'] ? priorityBadge($t['prioritas']) : '-' ?></td>
+                                <td><?= h($t['ditugaskan']) ?></td>
+                                <td>
+                                    <button class="btn btn-sm" style="background-color:#249D8F; color:#fff; font-weight:bold;"
+                                        onclick="pilihTiket(<?= $t['id'] ?>, '<?= h(addslashes($t['title'])) ?>')">
+                                        Selesaikan
+                                    </button>
+                                </td>
+                            </tr>
                         <?php endwhile; ?>
                     </tbody>
                 </table>
@@ -100,7 +108,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Catatan Resolusi *</label>
                         <textarea name="resolution_note" class="form-control" rows="5" required
-                                  placeholder="Jelaskan bagaimana tiket ini diselesaikan..."></textarea>
+                            placeholder="Jelaskan bagaimana tiket ini diselesaikan..."></textarea>
                     </div>
 
                     <button type="submit" class="btn w-100" style="background-color:#249D8F; color:#fff; font-weight:bold;">
@@ -113,10 +121,10 @@ require_once __DIR__ . '/../includes/header.php';
 </div>
 
 <script>
-function pilihTiket(id, title) {
-    document.getElementById('ticket_id').value = id;
-    document.getElementById('ticketLabel').value = '#' + id + ' — ' + title;
-}
+    function pilihTiket(id, title) {
+        document.getElementById('ticket_id').value = id;
+        document.getElementById('ticketLabel').value = '#' + id + ' — ' + title;
+    }
 </script>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

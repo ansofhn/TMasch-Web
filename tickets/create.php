@@ -58,16 +58,17 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="mb-3">
                 <label class="form-label fw-semibold">Judul *</label>
                 <input type="text" name="title" class="form-control" required
-                       value="<?= h($_POST['title'] ?? '') ?>">
+                    value="<?= h($_POST['title'] ?? '') ?>">
             </div>
 
             <div class="mb-3">
                 <label class="form-label fw-semibold">Kategori *</label>
                 <select name="category_id" class="form-select" required>
                     <option value="">-- Pilih Kategori --</option>
-                    <?php $categories->data_seek(0); while ($c = $categories->fetch_assoc()): ?>
+                    <?php $categories->data_seek(0);
+                    while ($c = $categories->fetch_assoc()): ?>
                         <option value="<?= $c['id'] ?>"
-                            <?= (isset($_POST['category_id']) && $_POST['category_id']==$c['id']) ? 'selected' : '' ?>>
+                            <?= (isset($_POST['category_id']) && $_POST['category_id'] == $c['id']) ? 'selected' : '' ?>>
                             <?= h($c['name']) ?>
                         </option>
                     <?php endwhile; ?>
@@ -78,9 +79,10 @@ require_once __DIR__ . '/../includes/header.php';
                 <label class="form-label fw-semibold">Prioritas *</label>
                 <select name="priority_id" class="form-select" required>
                     <option value="">-- Pilih Prioritas --</option>
-                    <?php $priorities->data_seek(0); while ($p = $priorities->fetch_assoc()): ?>
+                    <?php $priorities->data_seek(0);
+                    while ($p = $priorities->fetch_assoc()): ?>
                         <option value="<?= $p['id'] ?>"
-                            <?= (isset($_POST['priority_id']) && $_POST['priority_id']==$p['id']) ? 'selected' : '' ?>>
+                            <?= (isset($_POST['priority_id']) && $_POST['priority_id'] == $p['id']) ? 'selected' : '' ?>>
                             <?= h($p['name']) ?>
                         </option>
                     <?php endwhile; ?>
@@ -90,7 +92,7 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="mb-4">
                 <label class="form-label fw-semibold">Deskripsi</label>
                 <textarea name="description" class="form-control" rows="4"
-                          placeholder="Jelaskan permasalahan secara detail..."><?= h($_POST['description'] ?? '') ?></textarea>
+                    placeholder="Jelaskan permasalahan secara detail..."><?= h($_POST['description'] ?? '') ?></textarea>
             </div>
 
             <div class="d-flex justify-content-end gap-2">

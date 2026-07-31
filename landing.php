@@ -1,12 +1,12 @@
 <?php require_once __DIR__ . '/includes/auth.php'; ?>
 <?php
 $anggotaKelompok = [
-  ['nama' => 'Ansof Habibunnadjar', 'npm' => '202343501344', 'link' => '#'],
-  ['nama' => 'Izzan Khalish Zubair', 'npm' => '202343501347', 'link' => '#'],
-  ['nama' => 'Ryan Ikramullah', 'npm' => '202343501549', 'link' => '#'],
-  ['nama' => 'Tegar Rizqy W.', 'npm' => '202343501446', 'link' => '#'],
+  ['nama' => 'Ansof Habibunnadjar', 'npm' => '202343501344', 'link' => 'https://ansof-pwl.freedev.app'],
+  ['nama' => 'Izzan Khalish Zubair', 'npm' => '202343501347', 'link' => 'https://izzan-pwl.freedev.app'],
+  ['nama' => 'Ryan Ikramullah', 'npm' => '202343501549', 'link' => 'https://ryan-pwl.freedev.app'],
+  ['nama' => 'Tegar Rizqy W.', 'npm' => '202343501446', 'link' => 'https://tegarrizqy.freedev.app'],
   ['nama' => 'Triyanti Putri A.L', 'npm' => '202343501349', 'link' => '#'],
-  ['nama' => 'Yudi Ahmad T.', 'npm' => '202343501555', 'link' => '#'],
+  ['nama' => 'Yudi Ahmad T.', 'npm' => '202343501555', 'link' => 'https://yudi-pwl.freedev.app'],
   ['nama' => 'Wahyu Feriyawan', 'npm' => '202343501311', 'link' => '#'],
   ['nama' => 'Adelia Pandina', 'npm' => '202343501519', 'link' => '#'],
 ];

@@ -58,22 +58,28 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="card">
     <div class="table-responsive">
         <table class="table table-hover mb-0 align-middle">
-            <thead><tr><th style="width:80px">ID</th><th>Nama Kategori</th><th style="width:120px"></th></tr></thead>
+            <thead>
+                <tr>
+                    <th style="width:80px">ID</th>
+                    <th>Nama Kategori</th>
+                    <th style="width:120px"></th>
+                </tr>
+            </thead>
             <tbody>
                 <?php while ($c = $categories->fetch_assoc()): ?>
-                <tr>
-                    <td>#<?= $c['id'] ?></td>
-                    <td><?= h($c['name']) ?></td>
-                    <td>
-                        <button class="btn btn-sm" style="background-color:#1A3263; color:#fff; font-weight:bold;"
-                            onclick='editRow(<?= json_encode($c) ?>)'
-                            data-bs-toggle="modal" data-bs-target="#catModal">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <a href="?delete=<?= $c['id'] ?>" class="btn btn-sm" style="background-color:#D9534F; color:#fff; font-weight:bold;"
-                           onclick="return confirm('Yakin hapus kategori ini?')"><i class="bi bi-trash"></i></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>#<?= $c['id'] ?></td>
+                        <td><?= h($c['name']) ?></td>
+                        <td>
+                            <button class="btn btn-sm" style="background-color:#1A3263; color:#fff; font-weight:bold;"
+                                onclick='editRow(<?= json_encode($c) ?>)'
+                                data-bs-toggle="modal" data-bs-target="#catModal">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <a href="?delete=<?= $c['id'] ?>" class="btn btn-sm" style="background-color:#D9534F; color:#fff; font-weight:bold;"
+                                onclick="return confirm('Yakin hapus kategori ini?')"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
@@ -103,16 +109,17 @@ require_once __DIR__ . '/../includes/header.php';
 </div>
 
 <script>
-function resetForm() {
-    document.getElementById('modalTitle').innerText = 'Tambah Kategori';
-    document.getElementById('f_id').value = '';
-    document.getElementById('f_name').value = '';
-}
-function editRow(row) {
-    document.getElementById('modalTitle').innerText = 'Edit Kategori';
-    document.getElementById('f_id').value = row.id;
-    document.getElementById('f_name').value = row.name;
-}
+    function resetForm() {
+        document.getElementById('modalTitle').innerText = 'Tambah Kategori';
+        document.getElementById('f_id').value = '';
+        document.getElementById('f_name').value = '';
+    }
+
+    function editRow(row) {
+        document.getElementById('modalTitle').innerText = 'Edit Kategori';
+        document.getElementById('f_id').value = row.id;
+        document.getElementById('f_name').value = row.name;
+    }
 </script>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

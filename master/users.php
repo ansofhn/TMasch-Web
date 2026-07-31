@@ -70,7 +70,7 @@ require_once __DIR__ . '/../includes/header.php';
         <p>Kelola akun Admin, Guru, dan Siswa.</p>
     </div>
     <button class="btn btn-sm" style="background-color:#FAB95B; color:#1A3263; font-weight:bold;" data-bs-toggle="modal" data-bs-target="#userModal"
-            onclick="resetForm()">
+        onclick="resetForm()">
         Tambah User
     </button>
 </div>
@@ -83,28 +83,35 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="table-responsive">
         <table class="table table-hover mb-0 align-middle">
             <thead>
-                <tr><th>ID</th><th>Nama Lengkap</th><th>Username</th><th>Role</th><th>Dept/Kelas</th><th></th></tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Lengkap</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Dept/Kelas</th>
+                    <th></th>
+                </tr>
             </thead>
             <tbody>
                 <?php while ($u = $users->fetch_assoc()): ?>
-                <tr>
-                    <td>#<?= $u['id'] ?></td>
-                    <td><?= h($u['full_name']) ?></td>
-                    <td><?= h($u['username']) ?></td>
-                    <td><span class="badge bg-secondary"><?= h($u['role_name']) ?></span></td>
-                    <td><?= h($u['department']) ?></td>
-                    <td>
-                        <button class="btn btn-sm" style="background-color:#1A3263; color:#fff; font-weight:bold;"
-                            onclick='editUser(<?= json_encode($u) ?>)'
-                            data-bs-toggle="modal" data-bs-target="#userModal">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <a href="?delete=<?= $u['id'] ?>" class="btn btn-sm" style="background-color:#D9534F; color:#fff; font-weight:bold;"
-                           onclick="return confirm('Yakin ingin menghapus user ini?')">
-                            <i class="bi bi-trash"></i>
-                        </a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>#<?= $u['id'] ?></td>
+                        <td><?= h($u['full_name']) ?></td>
+                        <td><?= h($u['username']) ?></td>
+                        <td><span class="badge bg-secondary"><?= h($u['role_name']) ?></span></td>
+                        <td><?= h($u['department']) ?></td>
+                        <td>
+                            <button class="btn btn-sm" style="background-color:#1A3263; color:#fff; font-weight:bold;"
+                                onclick='editUser(<?= json_encode($u) ?>)'
+                                data-bs-toggle="modal" data-bs-target="#userModal">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <a href="?delete=<?= $u['id'] ?>" class="btn btn-sm" style="background-color:#D9534F; color:#fff; font-weight:bold;"
+                                onclick="return confirm('Yakin ingin menghapus user ini?')">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
@@ -141,7 +148,8 @@ require_once __DIR__ . '/../includes/header.php';
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Role *</label>
                         <select name="role_id" id="f_role_id" class="form-select" required>
-                            <?php $roles->data_seek(0); while ($r = $roles->fetch_assoc()): ?>
+                            <?php $roles->data_seek(0);
+                            while ($r = $roles->fetch_assoc()): ?>
                                 <option value="<?= $r['id'] ?>"><?= h($r['name']) ?></option>
                             <?php endwhile; ?>
                         </select>
@@ -162,24 +170,25 @@ require_once __DIR__ . '/../includes/header.php';
 </div>
 
 <script>
-function resetForm() {
-    document.getElementById('modalTitle').innerText = 'Tambah User';
-    document.getElementById('f_id').value = '';
-    document.getElementById('f_full_name').value = '';
-    document.getElementById('f_username').value = '';
-    document.getElementById('f_password').value = '';
-    document.getElementById('f_department').value = '';
-    document.getElementById('pwHint').innerText = '*';
-}
-function editUser(u) {
-    document.getElementById('modalTitle').innerText = 'Edit User';
-    document.getElementById('f_id').value = u.id;
-    document.getElementById('f_full_name').value = u.full_name;
-    document.getElementById('f_username').value = u.username;
-    document.getElementById('f_password').value = '';
-    document.getElementById('f_department').value = u.department || '';
-    document.getElementById('pwHint').innerText = '(kosongkan jika tidak diubah)';
-}
+    function resetForm() {
+        document.getElementById('modalTitle').innerText = 'Tambah User';
+        document.getElementById('f_id').value = '';
+        document.getElementById('f_full_name').value = '';
+        document.getElementById('f_username').value = '';
+        document.getElementById('f_password').value = '';
+        document.getElementById('f_department').value = '';
+        document.getElementById('pwHint').innerText = '*';
+    }
+
+    function editUser(u) {
+        document.getElementById('modalTitle').innerText = 'Edit User';
+        document.getElementById('f_id').value = u.id;
+        document.getElementById('f_full_name').value = u.full_name;
+        document.getElementById('f_username').value = u.username;
+        document.getElementById('f_password').value = '';
+        document.getElementById('f_department').value = u.department || '';
+        document.getElementById('pwHint').innerText = '(kosongkan jika tidak diubah)';
+    }
 </script>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
