@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../includes/auth.php';
-requireAdmin();
+requireLogin();
 require_once __DIR__ . '/../config/db.php';
 
 $pageTitle = 'Update Status Tiket';
@@ -10,7 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ticketId = intval($_POST['ticket_id'] ?? 0);
     $note     = trim($_POST['resolution_note'] ?? '');
 
-    if ($ticketId <= 0) {
+    if (!isAdmin() && !isTicketAssignedToMe($conn, $ticketId, currentUser()['id'])) {
+        $error = 'Anda tidak berhak menyelesaikan tiket ini.';
+    } elseif ($ticketId <= 0) {
         $error = 'Pilih tiket terlebih dahulu.';
     } elseif ($note === '') {
         $error = 'Catatan resolusi wajib diisi.';
@@ -27,16 +29,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Tiket yang sedang In Progress (siap ditutup)
-$activeTickets = $conn->query(
+$user = currentUser();
+$sqlActive =
     "SELECT t.id, t.title, p.name AS prioritas, s.name AS status,
             COALESCE(ab.full_name,'-') AS ditugaskan
      FROM tickets t
      JOIN statuses s ON t.status_id = s.id
      LEFT JOIN priorities p ON t.priority_id = p.id
      LEFT JOIN users ab ON t.assigned_to = ab.id
-     WHERE s.name = 'In Progress'
-     ORDER BY t.id DESC"
-);
+     WHERE s.name = 'In Progress' ";
+if (!isAdmin()) {
+    $sqlActive .= "AND t.assigned_to = " . intval($user['id']) . " ";
+}
+$sqlActive .= "ORDER BY t.id DESC";
+$activeTickets = $conn->query($sqlActive);
 
 require_once __DIR__ . '/../includes/header.php';
 ?>

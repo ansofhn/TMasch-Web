@@ -7,6 +7,14 @@ function isLoggedIn()
     return isset($_SESSION['user_id']);
 }
 
+function isTicketAssignedToMe($conn, $ticketId, $userId)
+{
+    $stmt = $conn->prepare("SELECT id FROM tickets WHERE id=? AND assigned_to=?");
+    $stmt->bind_param("ii", $ticketId, $userId);
+    $stmt->execute();
+    return $stmt->get_result()->num_rows > 0;
+}
+
 function requireLogin()
 {
     if (!isLoggedIn()) {
