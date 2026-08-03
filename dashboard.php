@@ -7,19 +7,21 @@ $user = currentUser();
 $pageTitle = 'Dashboard';
 
 // ── KPI counts ─────────────────────────────────────────────
-function countByStatus($conn, $statusName, $userId = null)
+function countByStatus($conn, $statusName, $userId = null, $includeAssigned = false)
 {
-    if ($userId) {
+    if ($userId && $includeAssigned) {
         $stmt = $conn->prepare(
             "SELECT COUNT(*) c FROM tickets t JOIN statuses s ON t.status_id=s.id
-             WHERE s.name=? AND t.created_by=?"
+             WHERE s.name=? AND (t.created_by=? OR t.assigned_to=?)"
         );
-        $stmt->bind_param("si", $statusName, $userId);
-    } else {
+        $stmt->bind_param("sii", $statusName, $userId, $userId);
+    } elseif ($userId === null) {
         $stmt = $conn->prepare(
             "SELECT COUNT(*) c FROM tickets t JOIN statuses s ON t.status_id=s.id WHERE s.name=?"
         );
         $stmt->bind_param("s", $statusName);
+    } else {
+        $stmt = null;
     }
     $stmt->execute();
     return $stmt->get_result()->fetch_assoc()['c'];
@@ -30,9 +32,9 @@ if (isAdmin()) {
     $progressCount = countByStatus($conn, 'In Progress');
     $closedCount   = countByStatus($conn, 'Closed');
 } else {
-    $openCount     = countByStatus($conn, 'Open', $user['id']);
-    $progressCount = countByStatus($conn, 'In Progress', $user['id']);
-    $closedCount   = countByStatus($conn, 'Closed', $user['id']);
+    $openCount     = countByStatus($conn, 'Open', $user['id'], true);
+    $progressCount = countByStatus($conn, 'In Progress', $user['id'], true);
+    $closedCount   = countByStatus($conn, 'Closed', $user['id'], true);
 }
 
 // ── Recent tickets ───────────────────────────────────────────

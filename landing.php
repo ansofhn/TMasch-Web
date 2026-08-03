@@ -5,10 +5,10 @@ $anggotaKelompok = [
   ['nama' => 'Izzan Khalish Zubair', 'npm' => '202343501347', 'link' => 'https://izzan-pwl.freedev.app'],
   ['nama' => 'Ryan Ikramullah', 'npm' => '202343501549', 'link' => 'https://ryan-pwl.freedev.app'],
   ['nama' => 'Tegar Rizqy W.', 'npm' => '202343501446', 'link' => 'https://tegarrizqy.freedev.app'],
-  ['nama' => 'Triyanti Putri A.L', 'npm' => '202343501349', 'link' => '#'],
+  ['nama' => 'Triyanti Putri A.L', 'npm' => '202343501349', 'link' => 'https://triyanti-pwl.freedev.app/php/index.php'],
   ['nama' => 'Yudi Ahmad T.', 'npm' => '202343501555', 'link' => 'https://yudi-pwl.freedev.app'],
   ['nama' => 'Wahyu Feriyawan', 'npm' => '202343501311', 'link' => '#'],
-  ['nama' => 'Adelia Pandina', 'npm' => '202343501519', 'link' => '#'],
+  ['nama' => 'Adelia Pandina', 'npm' => '202343501519', 'link' => 'https://adelia.freedev.app/?i=2'],
 ];
 ?>
 <!DOCTYPE html>
