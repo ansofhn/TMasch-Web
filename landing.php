@@ -7,7 +7,7 @@ $anggotaKelompok = [
   ['nama' => 'Tegar Rizqy W.', 'npm' => '202343501446', 'link' => 'https://tegarrizqy.freedev.app'],
   ['nama' => 'Triyanti Putri A.L', 'npm' => '202343501349', 'link' => 'https://triyanti-pwl.freedev.app/php/index.php'],
   ['nama' => 'Yudi Ahmad T.', 'npm' => '202343501555', 'link' => 'https://yudi-pwl.freedev.app'],
-  ['nama' => 'Wahyu Feriyawan', 'npm' => '202343501311', 'link' => '#'],
+  ['nama' => 'Wahyu Feriyawan', 'npm' => '202343501311', 'link' => 'https://wahyuferiyawan.ifree.page/'],
   ['nama' => 'Adelia Pandina', 'npm' => '202343501519', 'link' => 'https://adelia.freedev.app/?i=2'],
 ];
 ?>
