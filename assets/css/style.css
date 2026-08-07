@@ -90,7 +90,7 @@ body {
 }
 
 .table tbody td {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #1e293b;
   border-top: 1px solid #e2e8f0;
   white-space: nowrap;
@@ -98,6 +98,11 @@ body {
 
 .table tbody tr:hover {
   background-color: #f8fafc;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ── Page header ─────────────────────────────────────────── */
