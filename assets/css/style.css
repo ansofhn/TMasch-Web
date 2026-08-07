@@ -94,6 +94,7 @@ body {
   color: #1e293b;
   border-top: 1px solid #e2e8f0;
   white-space: nowrap;
+  font-weight: 400;
 }
 
 .table tbody tr:hover {
